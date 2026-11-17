@@ -1,0 +1,269 @@
+/* =========================================================
+   BASE STYLES (DESKTOP VIEWPORT: > 992px)
+   ========================================================= */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    color: #333333;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #343434;
+    min-height: 60px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline wavy #0056b3;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item > a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px 16px;
+    font-size: 15px;
+    display: block;
+}
+
+.nav-item > a:hover {
+    background-color: #2a2a2a;
+    text-decoration: underline wavy #0056b3;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1a1a1a;
+    min-width: 140px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+}
+
+.dropdown-menu li a {
+    color: #ffffff;
+    padding: 12px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #2d2d2d;
+}
+
+.nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-login,
+.btn-signup {
+    color: #ffffff;
+    padding: 7px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-signup {
+    border: 1px solid #ffffff;
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+    background-color: #0056b3;
+}
+
+/* Main Layout */
+.main-container {
+    max-width: 1050px;
+    width: 90%;
+    margin: 30px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid #e1e4e8;
+}
+
+/* Hero Section */
+.hero-banner {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 35px 25px;
+    border-radius: 6px;
+    text-align: center;
+    border-bottom: 4px solid #0056b3;
+}
+
+.hero-banner h1 {
+    margin: 0 0 10px 0;
+    font-size: 26px;
+}
+
+.hero-banner p {
+    margin: 0;
+    color: #dddddd;
+    font-size: 15px;
+}
+
+/* 3-Column Highlights Row (Desktop) */
+.highlights-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.highlight-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 16px;
+    text-align: center;
+}
+
+.highlight-box h3 {
+    margin: 0 0 6px 0;
+    color: #0056b3;
+    font-size: 18px;
+}
+
+.highlight-box p {
+    margin: 0;
+    color: #555555;
+    font-size: 13px;
+}
+
+/* 4-Column Gallery Grid (Desktop) */
+.gallery-section {
+    margin-top: 30px;
+}
+
+.gallery-section h2 {
+    margin: 0 0 16px 0;
+    font-size: 20px;
+    color: #1e1e1e;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.gallery-item {
+    margin: 0;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fafafa;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item figcaption {
+    padding: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #1e1e1e;
+    color: #888888;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+
+@media only screen and (max-width: 992px) {
+    header {
+        padding: 0 20px;
+    }
+
+    .main-container {
+        padding: 22px;
+    }
+
+    /* Gallery adjusts from 4 columns to 3 columns on Tablet */
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    /* Stack header items cleanly on mobile */
+    header {
+        flex-direction: column;
+        padding: 14px 16px;
+        gap: 10px;
+    }
+
+    .nav-item > a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .hero-banner {
+        padding: 24px 16px;
+    }
+
+    .hero-banner h1 {
+        font-size: 20px;
+    }
+
+    /* Highlights stack into 1 column on Mobile */
+    .highlights-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    /* Gallery adjusts from 3 columns to 2 columns on Mobile */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .gallery-item img {
+        height: 130px;
+    }
+}
